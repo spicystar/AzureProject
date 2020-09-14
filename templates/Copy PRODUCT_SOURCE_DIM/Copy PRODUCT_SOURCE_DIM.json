@@ -1,0 +1,319 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name"
+		},
+		"Inputblob": {
+			"type": "string"
+		},
+		"OutputSql": {
+			"type": "string"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Copy PRODUCT_SOURCE_DIM')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "PRODUCT_SOURCE_DIM to SQL",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ExcelSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true
+								}
+							},
+							"sink": {
+								"type": "AzureSqlSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "SETID",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SETID",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "PRODUCT_SOURCE_ID",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PRODUCT_SOURCE_ID",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "PRODUCT_SOURCE_DESC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PRODUCT_SOURCE_DESC",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "SOURCE ID",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SOURCE ID",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "PRODUCT_SOURCE_CAT_DESC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PRODUCT_SOURCE_CAT_DESC",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "PRODUCT_SOURCE_GRP_ID",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PRODUCT_SOURCE_GRP_ID",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "PRODUCT_SOURCE_GRP_DESC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PRODUCT_SOURCE_GRP_DESC",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "PRODUCT_SOURCE_CLASS_DESC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PRODUCT_SOURCE_CLASS_DESC",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "EFFDT",
+											"type": "DateTime",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "EFFDT",
+											"type": "DateTime",
+											"physicalType": "datetime2"
+										}
+									},
+									{
+										"source": {
+											"name": "EFF_STATUS",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "EFF_STATUS",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									},
+									{
+										"source": {
+											"name": "DTTM_STAMP",
+											"type": "DateTimeOffset",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "DTTM_STAMP",
+											"type": "DateTimeOffset",
+											"physicalType": "datetimeoffset"
+										}
+									},
+									{
+										"source": {
+											"name": "OPR_ID",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "OPR_ID",
+											"type": "String",
+											"physicalType": "nvarchar"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "PRODUCT_SRC_XLS",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DatatoSQL",
+								"type": "DatasetReference"
+							}
+						]
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/PRODUCT_SRC_XLS')]",
+				"[concat(variables('factoryId'), '/datasets/DatatoSQL')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/PRODUCT_SRC_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('Inputblob')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "PRODUCT_SOURCE_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "PRODUCT_SOURCE_DIM.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "PRODUCT_SOURCE_ID",
+						"type": "String"
+					},
+					{
+						"name": "PRODUCT_SOURCE_DESC",
+						"type": "String"
+					},
+					{
+						"name": "SOURCE ID",
+						"type": "String"
+					},
+					{
+						"name": "PRODUCT_SOURCE_CAT_DESC",
+						"type": "String"
+					},
+					{
+						"name": "PRODUCT_SOURCE_GRP_ID",
+						"type": "String"
+					},
+					{
+						"name": "PRODUCT_SOURCE_GRP_DESC",
+						"type": "String"
+					},
+					{
+						"name": "PRODUCT_SOURCE_CLASS_DESC",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DatatoSQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('OutputSql')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "PRODUCT_SOURCE_DIM1"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
