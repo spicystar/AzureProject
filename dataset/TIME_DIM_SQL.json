@@ -1,0 +1,94 @@
+{
+	"name": "TIME_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CALENDAR_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PERIOD_DESCR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PERIOD_DESCR_SHORT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QTR_DESCR_SHORT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HY_DESCR_SHORT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BEGIN_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "END_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PERIOD_DAYS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "YEAR_DAYS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TIME_DIM"
+		}
+	}
+}
