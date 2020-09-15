@@ -31,8 +31,9 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "SETID",
 									"type": "String",
-									"ordinal": 1
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "SETID",
@@ -42,8 +43,9 @@
 							},
 							{
 								"source": {
+									"name": "CALENDAR_ID",
 									"type": "String",
-									"ordinal": 2
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "CALENDAR_ID",
@@ -53,8 +55,9 @@
 							},
 							{
 								"source": {
+									"name": "FISCAL_YEAR",
 									"type": "String",
-									"ordinal": 3
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "FISCAL_YEAR",
@@ -64,8 +67,9 @@
 							},
 							{
 								"source": {
+									"name": "ACCOUNTING_PERIOD",
 									"type": "String",
-									"ordinal": 4
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "ACCOUNTING_PERIOD",
@@ -75,8 +79,9 @@
 							},
 							{
 								"source": {
+									"name": "PERIOD_DESCR",
 									"type": "String",
-									"ordinal": 5
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "PERIOD_DESCR",
@@ -86,8 +91,9 @@
 							},
 							{
 								"source": {
+									"name": "PERIOD_DESCR_SHORT",
 									"type": "String",
-									"ordinal": 6
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "PERIOD_DESCR_SHORT",
@@ -97,8 +103,9 @@
 							},
 							{
 								"source": {
+									"name": "QTR_DESCR_SHORT",
 									"type": "String",
-									"ordinal": 7
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "QTR_DESCR_SHORT",
@@ -108,8 +115,9 @@
 							},
 							{
 								"source": {
+									"name": "HY_DESCR_SHORT",
 									"type": "String",
-									"ordinal": 8
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "HY_DESCR_SHORT",
@@ -119,8 +127,9 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 9
+									"name": "BEGIN_DT",
+									"type": "DateTime",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "BEGIN_DT",
@@ -130,8 +139,9 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 10
+									"name": "END_DT",
+									"type": "DateTime",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "END_DT",
@@ -141,8 +151,9 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 11
+									"name": "PERIOD_DAYS",
+									"type": "Int32",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "PERIOD_DAYS",
@@ -152,8 +163,9 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 12
+									"name": "YEAR_DAYS",
+									"type": "Int32",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "YEAR_DAYS",
@@ -163,8 +175,9 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 13
+									"name": "EFFDT",
+									"type": "DateTime",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "EFFDT",
@@ -174,8 +187,9 @@
 							},
 							{
 								"source": {
+									"name": "EFF_STATUS",
 									"type": "String",
-									"ordinal": 14
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "EFF_STATUS",
@@ -185,8 +199,9 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 15
+									"name": "DTTM_STAMP",
+									"type": "DateTime",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "DTTM_STAMP",
@@ -196,8 +211,9 @@
 							},
 							{
 								"source": {
+									"name": "OPR_ID",
 									"type": "String",
-									"ordinal": 16
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "OPR_ID",

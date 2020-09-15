@@ -1,0 +1,86 @@
+{
+	"name": "TIME_DIM_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "TIME_DIM",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Workbook 1_Reporting Dimensions_Target_20200910.xlsx",
+				"container": "workbook1"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "String"
+			},
+			{
+				"name": "CALENDAR_ID",
+				"type": "String"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "String"
+			},
+			{
+				"name": "PERIOD_DESCR",
+				"type": "String"
+			},
+			{
+				"name": "PERIOD_DESCR_SHORT",
+				"type": "String"
+			},
+			{
+				"name": "QTR_DESCR_SHORT",
+				"type": "String"
+			},
+			{
+				"name": "HY_DESCR_SHORT",
+				"type": "String"
+			},
+			{
+				"name": "BEGIN_DT",
+				"type": "String"
+			},
+			{
+				"name": "END_DT",
+				"type": "String"
+			},
+			{
+				"name": "PERIOD_DAYS",
+				"type": "String"
+			},
+			{
+				"name": "YEAR_DAYS",
+				"type": "String"
+			},
+			{
+				"name": "EFFDT",
+				"type": "String"
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
+				"type": "String"
+			}
+		]
+	}
+}
