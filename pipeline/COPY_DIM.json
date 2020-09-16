@@ -1544,7 +1544,7 @@
 							{
 								"source": {
 									"name": "ORG_UNIT_DESC",
-									"type": "Int32",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1585,18 +1585,6 @@
 								},
 								"sink": {
 									"name": "ORG_UNIT_LEVEL_1_ID",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "ORG_UNIT_LEVEL_2_ID",
-									"type": "Int32",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ORG_UNIT_LEVEL_2_ID",
 									"type": "Int32",
 									"physicalType": "int"
 								}
@@ -1719,6 +1707,18 @@
 									"name": "EFF_STATUS",
 									"type": "String",
 									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ORG_UNIT_LEVEL_2_ID",
+									"type": "Int32",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ORG_UNIT_LEVEL_2_ID",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
