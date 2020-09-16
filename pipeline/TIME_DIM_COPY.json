@@ -68,7 +68,7 @@
 							{
 								"source": {
 									"name": "ACCOUNTING_PERIOD",
-									"type": "String",
+									"type": "Int32",
 									"physicalType": "String"
 								},
 								"sink": {
