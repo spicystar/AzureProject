@@ -6,518 +6,12 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "Kyuhan"
-		},
-		"AzureDatabricks1_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
-		},
-		"Inputblob_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Inputblob'"
-		},
-		"OutputSql_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'OutputSql'"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/TIME_DIM_COPY')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "TIME_DIM_COPY",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "ExcelSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "SETID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "SETID",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "CALENDAR_ID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "CALENDAR_ID",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "FISCAL_YEAR",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "FISCAL_YEAR",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ACCOUNTING_PERIOD",
-											"type": "Int32",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ACCOUNTING_PERIOD",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "PERIOD_DESCR",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PERIOD_DESCR",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "PERIOD_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PERIOD_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "QTR_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "QTR_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "HY_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "HY_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "BEGIN_DT",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "BEGIN_DT",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "END_DT",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "END_DT",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "PERIOD_DAYS",
-											"type": "Int32",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PERIOD_DAYS",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "YEAR_DAYS",
-											"type": "Int32",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "YEAR_DAYS",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "EFFDT",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EFFDT",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "EFF_STATUS",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EFF_STATUS",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "DTTM_STAMP",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "DTTM_STAMP",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "OPR_ID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "OPR_ID",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "TIME_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "TIME_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/TIME_DIM_XLS')]",
-				"[concat(variables('factoryId'), '/datasets/TIME_DIM_SQL')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TIME_DIM_SQL')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "OutputSql",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "SETID",
-						"type": "nvarchar"
-					},
-					{
-						"name": "CALENDAR_ID",
-						"type": "nvarchar"
-					},
-					{
-						"name": "FISCAL_YEAR",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "ACCOUNTING_PERIOD",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "PERIOD_DESCR",
-						"type": "nvarchar"
-					},
-					{
-						"name": "PERIOD_DESCR_SHORT",
-						"type": "nvarchar"
-					},
-					{
-						"name": "QTR_DESCR_SHORT",
-						"type": "nvarchar"
-					},
-					{
-						"name": "HY_DESCR_SHORT",
-						"type": "nvarchar"
-					},
-					{
-						"name": "BEGIN_DT",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "END_DT",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "PERIOD_DAYS",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "YEAR_DAYS",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "EFFDT",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "EFF_STATUS",
-						"type": "nvarchar"
-					},
-					{
-						"name": "DTTM_STAMP",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "OPR_ID",
-						"type": "nvarchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "TIME_DIM"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/TIME_DIM_XLS')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Inputblob",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Excel",
-				"typeProperties": {
-					"sheetName": "TIME_DIM",
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
-						"container": "workbook1"
-					},
-					"firstRowAsHeader": true
-				},
-				"schema": [
-					{
-						"name": "SETID",
-						"type": "String"
-					},
-					{
-						"name": "CALENDAR_ID",
-						"type": "String"
-					},
-					{
-						"name": "FISCAL_YEAR",
-						"type": "String"
-					},
-					{
-						"name": "ACCOUNTING_PERIOD",
-						"type": "String"
-					},
-					{
-						"name": "PERIOD_DESCR",
-						"type": "String"
-					},
-					{
-						"name": "PERIOD_DESCR_SHORT",
-						"type": "String"
-					},
-					{
-						"name": "QTR_DESCR_SHORT",
-						"type": "String"
-					},
-					{
-						"name": "HY_DESCR_SHORT",
-						"type": "String"
-					},
-					{
-						"name": "BEGIN_DT",
-						"type": "String"
-					},
-					{
-						"name": "END_DT",
-						"type": "String"
-					},
-					{
-						"name": "PERIOD_DAYS",
-						"type": "String"
-					},
-					{
-						"name": "YEAR_DAYS",
-						"type": "String"
-					},
-					{
-						"name": "EFFDT",
-						"type": "String"
-					},
-					{
-						"name": "EFF_STATUS",
-						"type": "String"
-					},
-					{
-						"name": "DTTM_STAMP",
-						"type": "String"
-					},
-					{
-						"name": "OPR_ID",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureDatabricks",
-				"typeProperties": {
-					"domain": "https://adb-1192581545401334.14.azuredatabricks.net",
-					"accessToken": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDatabricks1_accessToken')]"
-					},
-					"newClusterNodeType": "Standard_NC24",
-					"newClusterNumOfWorker": "1",
-					"newClusterVersion": "5.5.x-gpu-scala2.11"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Inputblob')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "PRODUCT_SOURCE_DIM",
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('Inputblob_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OutputSql')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "PRODUCT_SOURCE_DIM",
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('OutputSql_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/BAL_TYPE_DIM_XLS')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
@@ -569,9 +63,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/BAL_TYPE_SQL')]",
@@ -623,9 +115,7 @@
 					"table": "BAL_TYPE_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/COPY_DIM')]",
@@ -755,15 +245,13 @@
 						"inputs": [
 							{
 								"referenceName": "BAL_TYPE_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "BAL_TYPE_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -949,15 +437,13 @@
 						"inputs": [
 							{
 								"referenceName": "BRANCH_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "BRANCH_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -1071,15 +557,13 @@
 						"inputs": [
 							{
 								"referenceName": "CURRENCY_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "CURRENCY_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -1277,15 +761,13 @@
 						"inputs": [
 							{
 								"referenceName": "ENTITY_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "ENTITY_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -1987,15 +1469,13 @@
 						"inputs": [
 							{
 								"referenceName": "FI_INSTR_FACT",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "FI_INSTR_FACT_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -2121,15 +1601,13 @@
 						"inputs": [
 							{
 								"referenceName": "LEDGER_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "LEDGER_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -2399,15 +1877,13 @@
 						"inputs": [
 							{
 								"referenceName": "ORG_UNIT_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "ORG_UNIT_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -2533,15 +2009,13 @@
 						"inputs": [
 							{
 								"referenceName": "SCENARIO_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "SCENARIO_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -2642,9 +2116,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/BRANCH_DIM_SQL')]",
@@ -2717,9 +2189,7 @@
 					"table": "BRANCH_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/CURRENCY_DIM_SQL')]",
@@ -2765,9 +2235,7 @@
 					"table": "CURRENCY_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/CURRENCY_DIM_XLS')]",
@@ -2820,9 +2288,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/ENTITY_DIM_XLS')]",
@@ -2899,9 +2365,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/ENTITY_DIM_SQL')]",
@@ -2977,9 +2441,7 @@
 					"table": "ENTITY_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LEDGER_DIM_XLS')]",
@@ -3032,9 +2494,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LEDGER_DIM_SQL')]",
@@ -3086,9 +2546,7 @@
 					"table": "LEDGER_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/ORG_UNIT_DIM_XLS')]",
@@ -3189,9 +2647,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/ORG_UNIT_DIM_SQL')]",
@@ -3297,9 +2753,7 @@
 					"table": "ORG_UNIT_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SCENARIO_DIM_XLS')]",
@@ -3352,9 +2806,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SCENARIO_DIM_SQL')]",
@@ -3406,9 +2858,7 @@
 					"table": "SCENARIO_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SOURCE_DIM_XLS')]",
@@ -3453,9 +2903,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SOURCE_DIM_SQL')]",
@@ -3503,9 +2951,7 @@
 					"table": "SOURCE_DIM"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/FI_INSTR_FACT')]",
@@ -3754,9 +3200,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/FI_INSTR_FACT_SQL')]",
@@ -4041,9 +3485,7 @@
 					"table": "FI_INSTR_FACT"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
-			]
+			"dependsOn": []
 		}
 	]
 }

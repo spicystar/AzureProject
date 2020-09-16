@@ -263,259 +263,1002 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/TIME_DIM_COPY')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/BAL_TYPE_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "BAL_TYPE_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
 					{
-						"name": "TIME_DIM_COPY",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "ExcelSource",
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true
-								}
-							},
-							"sink": {
-								"type": "AzureSqlSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "SETID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "SETID",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "CALENDAR_ID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "CALENDAR_ID",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "FISCAL_YEAR",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "FISCAL_YEAR",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "ACCOUNTING_PERIOD",
-											"type": "Int32",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "ACCOUNTING_PERIOD",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "PERIOD_DESCR",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PERIOD_DESCR",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "PERIOD_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PERIOD_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "QTR_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "QTR_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "HY_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "HY_DESCR_SHORT",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "BEGIN_DT",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "BEGIN_DT",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "END_DT",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "END_DT",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "PERIOD_DAYS",
-											"type": "Int32",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "PERIOD_DAYS",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "YEAR_DAYS",
-											"type": "Int32",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "YEAR_DAYS",
-											"type": "Int32",
-											"physicalType": "int"
-										}
-									},
-									{
-										"source": {
-											"name": "EFFDT",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EFFDT",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "EFF_STATUS",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "EFF_STATUS",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									},
-									{
-										"source": {
-											"name": "DTTM_STAMP",
-											"type": "DateTime",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "DTTM_STAMP",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "OPR_ID",
-											"type": "String",
-											"physicalType": "String"
-										},
-										"sink": {
-											"name": "OPR_ID",
-											"type": "String",
-											"physicalType": "nvarchar"
-										}
-									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "TIME_DIM_XLS",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "TIME_DIM_SQL",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "BAL_TYPE_CD",
+						"type": "String"
+					},
+					{
+						"name": "DESCR",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
 					}
-				],
-				"annotations": []
+				]
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/TIME_DIM_XLS')]",
-				"[concat(variables('factoryId'), '/datasets/TIME_DIM_SQL')]"
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BAL_TYPE_SQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OutputSql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BAL_TYPE_CD",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DESCR",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFFDT",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OPR_ID",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "BAL_TYPE_DIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BRANCH_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "BRANCH_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_ID",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_NAME",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_LEVEL_1_ID",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_LEVEL_2_ID",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_LEVEL_3_ID",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_LEVEL_1_DESC",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_LEVEL_2_DESC",
+						"type": "String"
+					},
+					{
+						"name": "BRANCH_LEVEL_3_DESC",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BRANCH_DIM_SQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OutputSql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BRANCH_ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "BRANCH_LEVEL_1_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BRANCH_LEVEL_2_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BRANCH_LEVEL_3_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BRANCH_LEVEL_1_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BRANCH_LEVEL_2_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BRANCH_LEVEL_3_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFFDT",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OPR_ID",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "BRANCH_DIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CURRENCY_DIM_SQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OutputSql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CURRENCY CODE",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFFDT",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OPR_ID",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "CURRENCY_DIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CURRENCY_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "CURRENCY_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "CURRENCY CODE",
+						"type": "String"
+					},
+					{
+						"name": "CURRENCY CODE",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ENTITY_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "ENTITY_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "ENTITY_ID",
+						"type": "String"
+					},
+					{
+						"name": "ENTITY_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ENTITY_LEVEL_1_ID",
+						"type": "String"
+					},
+					{
+						"name": "LEGAL ENTITY LEVEL 2 ID",
+						"type": "String"
+					},
+					{
+						"name": "ENTITY_LEVEL_3_ID",
+						"type": "String"
+					},
+					{
+						"name": "ENTITY_LEVEL_1_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ENTITY_LEVEL_2_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ENTITY_LEVEL_3_DESC",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ENTITY_DIM_SQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OutputSql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ENTITY_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ENTITY_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ENTITY_LEVEL_1_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LEGAL ENTITY LEVEL 2 ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ENTITY_LEVEL_3_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ENTITY_LEVEL_1_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ENTITY_LEVEL_2_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ENTITY_LEVEL_3_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFFDT",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OPR_ID",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "ENTITY_DIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LEDGER_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "LEDGER_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "LEDGER_ID",
+						"type": "String"
+					},
+					{
+						"name": "LEDGER_DESC",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LEDGER_DIM_SQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OutputSql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LEDGER_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LEDGER_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFFDT",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OPR_ID",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "LEDGER_DIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ORG_UNIT_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "ORG_UNIT_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_ID",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_DESC",
+						"type": "String"
+					},
+					{
+						"name": "OWNER_ID",
+						"type": "String"
+					},
+					{
+						"name": "OWNER_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_1_ID",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_2_ID",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_3_ID",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_4_ID",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_5_ID",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_1_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_2_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_3_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_4_DESC",
+						"type": "String"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_5_DESC",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ORG_UNIT_DIM_SQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OutputSql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "nchar"
+					},
+					{
+						"name": "ORG_UNIT_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ORG_UNIT_DESC",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "OWNER_ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "OWNER_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_1_ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_2_ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_3_ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_4_ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_5_ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_1_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_2_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_3_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_4_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ORG_UNIT_LEVEL_5_DESC",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFFDT",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OPR_ID",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "ORG_UNIT_DIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SCENARIO_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "SCENARIO_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "String"
+					},
+					{
+						"name": "SCENARIO ID",
+						"type": "String"
+					},
+					{
+						"name": "SCENARIO DESCRIPTION",
+						"type": "String"
+					},
+					{
+						"name": "EFFDT",
+						"type": "String"
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "String"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "String"
+					},
+					{
+						"name": "OPR_ID",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SCENARIO_DIM_SQL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "OutputSql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "SETID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SCENARIO ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SCENARIO DESCRIPTION",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EFFDT",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EFF_STATUS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "DTTM_STAMP",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OPR_ID",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "SCENARIO_DIM"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/OutputSql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SOURCE_DIM_XLS')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Inputblob",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "SOURCE_DIM",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+						"container": "workbook1"
+					}
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/Inputblob')]"
 			]
 		}
 	]
