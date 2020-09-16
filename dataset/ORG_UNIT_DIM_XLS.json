@@ -1,0 +1,98 @@
+{
+	"name": "ORG_UNIT_DIM_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "ORG_UNIT_DIM",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+				"container": "workbook1"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_DESC",
+				"type": "String"
+			},
+			{
+				"name": "OWNER_ID",
+				"type": "String"
+			},
+			{
+				"name": "OWNER_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_1_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_2_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_3_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_4_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_5_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_1_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_2_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_3_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_4_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_5_DESC",
+				"type": "String"
+			},
+			{
+				"name": "EFFDT",
+				"type": "String"
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
+				"type": "String"
+			}
+		]
+	}
+}

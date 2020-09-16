@@ -1,0 +1,42 @@
+{
+	"name": "SOURCE_DIM_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "SOURCE_DIM",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+				"container": "workbook1"
+			}
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}

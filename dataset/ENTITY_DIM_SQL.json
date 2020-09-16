@@ -1,0 +1,73 @@
+{
+	"name": "ENTITY_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENTITY_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENTITY_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENTITY_LEVEL_1_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LEGAL ENTITY LEVEL 2 ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENTITY_LEVEL_3_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENTITY_LEVEL_1_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENTITY_LEVEL_2_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ENTITY_LEVEL_3_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ENTITY_DIM"
+		}
+	}
+}

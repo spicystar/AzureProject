@@ -1,0 +1,103 @@
+{
+	"name": "ORG_UNIT_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "nchar"
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORG_UNIT_DESC",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OWNER_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "OWNER_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_1_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_2_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_3_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_4_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_5_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_1_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_2_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_3_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_4_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ORG_UNIT_LEVEL_5_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ORG_UNIT_DIM"
+		}
+	}
+}

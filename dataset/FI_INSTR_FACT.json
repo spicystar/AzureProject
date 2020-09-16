@@ -1,0 +1,246 @@
+{
+	"name": "FI_INSTR_FACT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "FI_INSTR_FACT",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "FI_INSTR_FACT.xlsx",
+				"container": "workbook1"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "String"
+			},
+			{
+				"name": "FI_INSTRUMENT_ID",
+				"type": "String"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "String"
+			},
+			{
+				"name": "ASOF_DT",
+				"type": "String"
+			},
+			{
+				"name": "PF_SYSTEM_CODE",
+				"type": "String"
+			},
+			{
+				"name": "PF_SRC_SYSTEM_ID",
+				"type": "String"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_ID",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "String"
+			},
+			{
+				"name": "GL_ACCOUNT_ID",
+				"type": "String"
+			},
+			{
+				"name": "GL_PRODUCT_ID",
+				"type": "String"
+			},
+			{
+				"name": "TRANSACTION_DT",
+				"type": "String"
+			},
+			{
+				"name": "FI_START_DATE",
+				"type": "String"
+			},
+			{
+				"name": "FI_END_DATE",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CODE_TC",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CODE_FC",
+				"type": "String"
+			},
+			{
+				"name": "AMOUNT_TC",
+				"type": "String"
+			},
+			{
+				"name": "AMOUNT_FC",
+				"type": "String"
+			},
+			{
+				"name": "FI_TERM_MATURITY",
+				"type": "String"
+			},
+			{
+				"name": "FI_TERM_UOM",
+				"type": "String"
+			},
+			{
+				"name": "RATE_RESET_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "FI_INTEREST_RATE",
+				"type": "String"
+			},
+			{
+				"name": "FI_FLOOR_RATE",
+				"type": "String"
+			},
+			{
+				"name": "BU_CODE",
+				"type": "String"
+			},
+			{
+				"name": "TENOR_MONTHS",
+				"type": "String"
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "String"
+			},
+			{
+				"name": "LAST_REPRICING_DATE",
+				"type": "String"
+			},
+			{
+				"name": "NEXT_REPRICING_DATE",
+				"type": "String"
+			},
+			{
+				"name": "REPRICING_FREQ",
+				"type": "String"
+			},
+			{
+				"name": "REG_LOAN_GRADE",
+				"type": "String"
+			},
+			{
+				"name": "HO_LOAN_GRADE",
+				"type": "String"
+			},
+			{
+				"name": "NPL_BORROWER_IND",
+				"type": "String"
+			},
+			{
+				"name": "BASE_RATE_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "INTEREST_SPREAD_RATE",
+				"type": "String"
+			},
+			{
+				"name": "NON_STD_FTP_RATE",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_STATUS_CODE",
+				"type": "String"
+			},
+			{
+				"name": "LOAN_INDICATOR",
+				"type": "String"
+			},
+			{
+				"name": "SUSPEND_INTEREST_IND",
+				"type": "String"
+			},
+			{
+				"name": "TRANS_POINT_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_NAME_ENGLISH",
+				"type": "String"
+			},
+			{
+				"name": "BU_CODE_DERIVE",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_SOURCE_ID",
+				"type": "String"
+			},
+			{
+				"name": "GL_ACCOUNT_EOP",
+				"type": "String"
+			},
+			{
+				"name": "GL_ACCOUNT_AVE",
+				"type": "String"
+			},
+			{
+				"name": "GL_ACCOUNT_INT",
+				"type": "String"
+			},
+			{
+				"name": "GL_ACCOUNT_FTP",
+				"type": "String"
+			},
+			{
+				"name": "GL_ACCOUNT_OBS",
+				"type": "String"
+			},
+			{
+				"name": "OPEN_DATE",
+				"type": "String"
+			},
+			{
+				"name": "MATURITY_DATE",
+				"type": "String"
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
+				"type": "String"
+			}
+		]
+	}
+}

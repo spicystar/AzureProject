@@ -1,0 +1,282 @@
+{
+	"name": "FI_INSTR_FACT_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FI_INSTRUMENT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ASOF_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PF_SYSTEM_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PF_SRC_SYSTEM_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CUST_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CHANNEL_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GL_ACCOUNT_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GL_PRODUCT_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANSACTION_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FI_START_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FI_END_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CURRENCY_CODE_TC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CURRENCY_CODE_FC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AMOUNT_TC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "AMOUNT_FC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FI_TERM_MATURITY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FI_TERM_UOM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RATE_RESET_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FI_INTEREST_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FI_FLOOR_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BU_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TENOR_MONTHS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_REPRICING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEXT_REPRICING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REPRICING_FREQ",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REG_LOAN_GRADE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HO_LOAN_GRADE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NPL_BORROWER_IND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BASE_RATE_TYPE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "INTEREST_SPREAD_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NON_STD_FTP_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCT_STATUS_CODE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LOAN_INDICATOR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SUSPEND_INTEREST_IND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANS_POINT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CUST_NAME_ENGLISH",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BU_CODE_DERIVE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GL_ACCOUNT_EOP",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GL_ACCOUNT_AVE",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GL_ACCOUNT_INT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GL_ACCOUNT_FTP",
+				"type": "nvarchar"
+			},
+			{
+				"name": "GL_ACCOUNT_OBS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OPEN_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MATURITY_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FI_INSTR_FACT"
+		}
+	}
+}
