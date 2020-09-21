@@ -1,0 +1,55 @@
+{
+	"name": "TPOINT_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "TRANS_POINT_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TRANS_POINT_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TPOINT_DIM"
+		}
+	}
+}
