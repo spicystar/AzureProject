@@ -1,0 +1,58 @@
+{
+	"name": "GL_PRODUCT_DIM_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "GL_PRODUCT_DIM",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+				"container": "workbook1"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "String"
+			},
+			{
+				"name": "DESCR",
+				"type": "String"
+			},
+			{
+				"name": "DESCRSHORT",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNT_OWNER_ID",
+				"type": "String"
+			},
+			{
+				"name": "EFFDT",
+				"type": "String"
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -1,0 +1,97 @@
+{
+	"name": "CHANNEL_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_TYPE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_TYPE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANS_POINT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_1_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_2_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_3_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_4_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_1_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_2_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_3_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_LEVEL_4_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "CHANNEL_DIM"
+		}
+	}
+}

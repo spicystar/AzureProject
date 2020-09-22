@@ -1,0 +1,155 @@
+{
+	"name": "ACCOUNT_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_TYPE_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ML_ACCOUNT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_1_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_2_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_3_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_4_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_5_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_6_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_1_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_2_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_3_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_4_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_5_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ACC_LEVEL_6_DESC",
+				"type": "varchar"
+			},
+			{
+				"name": "ABC_ACCOUNT_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "ML_ACCOUNT_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "IL_ACCOUNT_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "BALANCE_FWD_FLG",
+				"type": "varchar"
+			},
+			{
+				"name": "ABC_OBJ_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ABC_OBJ_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SIGNED_VALUE",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE_ACCT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOAD_DTTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LASTUPDDTTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ACCOUNT_DIM"
+		}
+	}
+}

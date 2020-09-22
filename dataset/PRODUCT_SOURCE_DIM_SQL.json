@@ -1,0 +1,69 @@
+{
+	"name": "PRODUCT_SOURCE_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SOURCE ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_CAT_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_GRP_ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_GRP_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_CLASS_DESC",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "PRODUCT_SOURCE_DIM"
+		}
+	}
+}

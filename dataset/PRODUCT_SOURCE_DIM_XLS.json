@@ -1,0 +1,70 @@
+{
+	"name": "PRODUCT_SOURCE_DIM_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "PRODUCT_SOURCE_DIM",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+				"container": "workbook1"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_SOURCE_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_SOURCE_DESC",
+				"type": "String"
+			},
+			{
+				"name": "SOURCE ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_SOURCE_CAT_DESC",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_SOURCE_GRP_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_SOURCE_GRP_DESC",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT_SOURCE_CLASS_DESC",
+				"type": "String"
+			},
+			{
+				"name": "EFFDT",
+				"type": "String"
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
+				"type": "String"
+			}
+		]
+	}
+}

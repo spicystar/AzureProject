@@ -1,0 +1,57 @@
+{
+	"name": "GL_PRODUCT_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCR",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCRSHORT",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_OWNER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "GL_PRODUCT_DIM"
+		}
+	}
+}
