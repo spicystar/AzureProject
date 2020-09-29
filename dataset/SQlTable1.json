@@ -1,0 +1,15 @@
+{
+	"name": "SQlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_outsql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"table": "D_BDW_EOP_BAL_STG"
+		}
+	}
+}

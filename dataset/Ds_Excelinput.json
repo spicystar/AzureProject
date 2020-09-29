@@ -1,0 +1,21 @@
+{
+	"name": "Ds_Excelinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_excelinput",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "D_BDW_EOP_BAL_S001",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "D_BDW_EOP_BAL_STG.xlsx",
+				"container": "etl2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
