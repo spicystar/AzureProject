@@ -9,6 +9,7 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
+			"schema": "dbo",
 			"table": "D_BDW_EOP_BAL_STG"
 		}
 	}
