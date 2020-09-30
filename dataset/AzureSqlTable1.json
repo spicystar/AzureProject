@@ -1,0 +1,226 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SRC_SYSTEM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SRC_DATE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "SRC_AMOUNT_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT_AMOUNT_ORIG_CURR",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "ORIG_ACCT_AMOUNT_CURR",
+				"type": "varchar"
+			},
+			{
+				"name": "BU_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE_PROD_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT_RM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT_AMOUNT_CNY",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "TENOR_MONTHS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TENOR_DAYS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "OPEN_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFFECTIVE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MATURITY_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_REPRICING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEXT_REPRICING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REPRICING_FREQ",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CUST_NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "REG_LOAN_GRADE",
+				"type": "varchar"
+			},
+			{
+				"name": "HO_LOAN_GRADE",
+				"type": "varchar"
+			},
+			{
+				"name": "NPL_BORROWER_IND",
+				"type": "varchar"
+			},
+			{
+				"name": "BASE_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BASE_RATE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "FINANCIAL_CAT_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "FINANCIAL_CAT_DESCR",
+				"type": "varchar"
+			},
+			{
+				"name": "INTEREST_SPREAD_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NON_STD_FTP_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCT_RATE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT_OUTSTAND_BAL",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "LOAN_INDICATOR",
+				"type": "varchar"
+			},
+			{
+				"name": "SUSPEND_INTEREST_IND",
+				"type": "varchar"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_NAME_ENGLISH",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_RM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCT_CURRENCY_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "NEXT_ROLLOVER_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEXT_TERM_MATURITY_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CONV_ACCT_AMOUNT",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "LAST_ROLLOVER_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FI_INTEREST_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FI_AVGBAL_INT_STG"
+		}
+	}
+}
