@@ -1,0 +1,16 @@
+{
+	"name": "Dfouttable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSFI_INSTR_STG",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "",
+			"table": "FI_INSTR_STG"
+		}
+	}
+}
