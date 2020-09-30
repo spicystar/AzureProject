@@ -1,0 +1,19 @@
+{
+	"name": "Excelinput",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_excelinput",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "etl2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "D_RUN_CONTROL_TBL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "RUN_CONTROL_TBL"
+		}
+	}
+}

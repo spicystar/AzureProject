@@ -1,0 +1,16 @@
+{
+	"name": "D_SRC_SYS_CODE_MAP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SRC_SYS_CODE_MAP"
+		}
+	}
+}

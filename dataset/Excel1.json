@@ -1,0 +1,21 @@
+{
+	"name": "Excel1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "D_PROCESS_INSTANCE_TBL",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "D_PROCESS_INSTANCE_TBL.xlsx",
+				"container": "etl2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
