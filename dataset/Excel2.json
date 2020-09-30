@@ -8,14 +8,39 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "D_RUN_CONTROL_TBL",
+			"sheetName": "D_PROCESS_INSTANCE_TBL",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "D_RUN_CONTROL_TBL.xlsx",
+				"fileName": "D_PROCESS_INSTANCE_TBL.xlsx",
 				"container": "etl2"
 			},
 			"firstRowAsHeader": true
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "String"
+			},
+			{
+				"name": "SOURCE_ID",
+				"type": "String"
+			},
+			{
+				"name": "DESCR",
+				"type": "String"
+			},
+			{
+				"name": "SEQ_NO",
+				"type": "String"
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "String"
+			},
+			{
+				"name": "DESCRLONG",
+				"type": "String"
+			}
+		]
 	}
 }
