@@ -1,0 +1,62 @@
+{
+	"name": "RUN_CONTROL_TBL_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "D_RUN_CONTROL_TBL",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "RUN_CONTROL_TBL.xlsx",
+				"container": "etl2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "String"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "String"
+			},
+			{
+				"name": "PF_SCENARIO_ID",
+				"type": "String"
+			},
+			{
+				"name": "ASOF_DT",
+				"type": "String"
+			},
+			{
+				"name": "BASE_CURRENCY",
+				"type": "String"
+			},
+			{
+				"name": "SETID",
+				"type": "String"
+			},
+			{
+				"name": "ARCHIVE_FOR_YEAR",
+				"type": "String"
+			},
+			{
+				"name": "ARCHIVE_FOR_PERIOD",
+				"type": "String"
+			},
+			{
+				"name": "CPMS_SOURCE_DATA_DIR_PATH",
+				"type": "String"
+			}
+		]
+	}
+}

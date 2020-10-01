@@ -1,0 +1,174 @@
+{
+	"name": "FI_EOP_BAL_STG_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "D_BDW_EOP_BAL_S001",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "D_BDW_EOP_BAL_STG.xlsx",
+				"container": "etl2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "SRC_SYSTEM_ID",
+				"type": "String"
+			},
+			{
+				"name": "SRC_DATE",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNT_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "SRC_AMOUNT_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_AMOUNT_ORIG_CURR",
+				"type": "String"
+			},
+			{
+				"name": "ORIG_ACCT_AMOUNT_CURR",
+				"type": "String"
+			},
+			{
+				"name": "BU_CODE",
+				"type": "String"
+			},
+			{
+				"name": "SOURCE_PROD_CODE",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_RM_CODE",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_AMOUNT_CNY",
+				"type": "String"
+			},
+			{
+				"name": "TENOR_MONTHS",
+				"type": "String"
+			},
+			{
+				"name": "TENOR_DAYS",
+				"type": "String"
+			},
+			{
+				"name": "OPEN_DATE",
+				"type": "String"
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "String"
+			},
+			{
+				"name": "EFFECTIVE_DATE",
+				"type": "String"
+			},
+			{
+				"name": "MATURITY_DATE",
+				"type": "String"
+			},
+			{
+				"name": "LAST_REPRICING_DATE",
+				"type": "String"
+			},
+			{
+				"name": "NEXT_REPRICING_DATE",
+				"type": "String"
+			},
+			{
+				"name": "REPRICING_FREQ",
+				"type": "String"
+			},
+			{
+				"name": "CUST_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "REG_LOAN_GRADE",
+				"type": "String"
+			},
+			{
+				"name": "HO_LOAN_GRADE",
+				"type": "String"
+			},
+			{
+				"name": "NPL_BORROWER_IND",
+				"type": "String"
+			},
+			{
+				"name": "BASE_RATE",
+				"type": "String"
+			},
+			{
+				"name": "BASE_RATE_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "FINANCIAL_CAT_CODE",
+				"type": "String"
+			},
+			{
+				"name": "FINANCIAL_CAT_DESCR",
+				"type": "String"
+			},
+			{
+				"name": "INTEREST_SPREAD_RATE",
+				"type": "String"
+			},
+			{
+				"name": "NON_STD_FTP_RATE",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_RATE_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_STATUS_CODE",
+				"type": "String"
+			},
+			{
+				"name": "ACCT_OUTSTAND_BAL",
+				"type": "String"
+			},
+			{
+				"name": "LOAN_INDICATOR",
+				"type": "String"
+			},
+			{
+				"name": "SUSPEND_INTEREST_IND",
+				"type": "String"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_NAME_ENGLISH",
+				"type": "String"
+			},
+			{
+				"name": "CUST_RM_CODE",
+				"type": "String"
+			},
+			{
+				"name": "FI_INTEREST_RATE",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"name": "SRC_SYS_CODE_MAP_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "D_SRC_SYS_CODE_MAP",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "D_SRC_SYS_CODE_MAP.xlsx",
+				"container": "etl2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "String"
+			},
+			{
+				"name": "PF_SRC_SYSTEM_ID",
+				"type": "String"
+			},
+			{
+				"name": "PF_SYSTEM_CODE",
+				"type": "String"
+			},
+			{
+				"name": "LAST_UPD_DATETIME",
+				"type": "String"
+			},
+			{
+				"name": "MAPPING_COMMENTS",
+				"type": "String"
+			},
+			{
+				"name": "EFFDT",
+				"type": "String"
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
+				"type": "String"
+			}
+		]
+	}
+}

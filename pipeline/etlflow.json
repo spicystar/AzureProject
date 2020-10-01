@@ -25,7 +25,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].D_BDW_EOP_BAL_STG",
+						"preCopyScript": "Truncate  table [dbo].[FI_EOP_BAL_STG]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -41,7 +41,7 @@
 								"sink": {
 									"name": "SRC_SYSTEM_ID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -53,7 +53,7 @@
 								"sink": {
 									"name": "SRC_DATE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -65,7 +65,7 @@
 								"sink": {
 									"name": "ACCOUNT_NUMBER",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -77,7 +77,7 @@
 								"sink": {
 									"name": "SRC_AMOUNT_TYPE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -88,20 +88,10 @@
 								},
 								"sink": {
 									"name": "ACCT_AMOUNT_ORIG_CURR",
-									"type": "String",
-									"physicalType": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ORIG_ACCT_AMOUNT_CURR",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ORIG_ACCT_AMOUNT_CURR",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Decimal",
+									"physicalType": "money",
+									"scale": 4,
+									"precision": 19
 								}
 							},
 							{
@@ -113,7 +103,7 @@
 								"sink": {
 									"name": "BU_CODE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -125,7 +115,7 @@
 								"sink": {
 									"name": "SOURCE_PROD_CODE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -137,7 +127,7 @@
 								"sink": {
 									"name": "ACCT_RM_CODE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -148,44 +138,46 @@
 								},
 								"sink": {
 									"name": "ACCT_AMOUNT_CNY",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Decimal",
+									"physicalType": "money",
+									"scale": 4,
+									"precision": 19
 								}
 							},
 							{
 								"source": {
 									"name": "TENOR_MONTHS",
-									"type": "String",
+									"type": "Int32",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "TENOR_MONTHS",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "TENOR_DAYS",
-									"type": "String",
+									"type": "Int32",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "TENOR_DAYS",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"name": "OPEN_DATE",
-									"type": "DateTime",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "OPEN_DATE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "nchar"
 								}
 							},
 							{
@@ -196,8 +188,8 @@
 								},
 								"sink": {
 									"name": "CLOSED_DATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
@@ -208,8 +200,8 @@
 								},
 								"sink": {
 									"name": "EFFECTIVE_DATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
@@ -220,44 +212,44 @@
 								},
 								"sink": {
 									"name": "MATURITY_DATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
 								"source": {
 									"name": "LAST_REPRICING_DATE",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "LAST_REPRICING_DATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
 								"source": {
 									"name": "NEXT_REPRICING_DATE",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "NEXT_REPRICING_DATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "DateTime",
+									"physicalType": "datetime"
 								}
 							},
 							{
 								"source": {
 									"name": "REPRICING_FREQ",
-									"type": "String",
+									"type": "Int32",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "REPRICING_FREQ",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
@@ -269,7 +261,7 @@
 								"sink": {
 									"name": "CUST_NUMBER",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -281,7 +273,7 @@
 								"sink": {
 									"name": "REG_LOAN_GRADE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -293,7 +285,7 @@
 								"sink": {
 									"name": "HO_LOAN_GRADE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -305,7 +297,7 @@
 								"sink": {
 									"name": "NPL_BORROWER_IND",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -316,8 +308,10 @@
 								},
 								"sink": {
 									"name": "BASE_RATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
 								}
 							},
 							{
@@ -329,7 +323,7 @@
 								"sink": {
 									"name": "BASE_RATE_TYPE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -341,7 +335,7 @@
 								"sink": {
 									"name": "FINANCIAL_CAT_CODE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -353,31 +347,35 @@
 								"sink": {
 									"name": "FINANCIAL_CAT_DESCR",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "INTEREST_SPREAD_RATE",
-									"type": "String",
+									"type": "Double",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "INTEREST_SPREAD_RATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
 								}
 							},
 							{
 								"source": {
 									"name": "NON_STD_FTP_RATE",
-									"type": "String",
+									"type": "Double",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "NON_STD_FTP_RATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
 								}
 							},
 							{
@@ -389,7 +387,7 @@
 								"sink": {
 									"name": "ACCT_RATE_TYPE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -401,7 +399,7 @@
 								"sink": {
 									"name": "ACCT_STATUS_CODE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -412,8 +410,10 @@
 								},
 								"sink": {
 									"name": "ACCT_OUTSTAND_BAL",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Decimal",
+									"physicalType": "money",
+									"scale": 4,
+									"precision": 19
 								}
 							},
 							{
@@ -425,7 +425,7 @@
 								"sink": {
 									"name": "LOAN_INDICATOR",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -437,7 +437,7 @@
 								"sink": {
 									"name": "SUSPEND_INTEREST_IND",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -449,7 +449,7 @@
 								"sink": {
 									"name": "BRANCH_ID",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -461,7 +461,7 @@
 								"sink": {
 									"name": "CUST_NAME_ENGLISH",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -473,19 +473,21 @@
 								"sink": {
 									"name": "CUST_RM_CODE",
 									"type": "String",
-									"physicalType": "String"
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"name": "FI_INTEREST_RATE",
-									"type": "String",
+									"type": "Double",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "FI_INTEREST_RATE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
 								}
 							}
 						],
@@ -498,13 +500,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Ds_Excelinput",
+						"referenceName": "FI_EOP_BAL_STG_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SQlTable1",
+						"referenceName": "FI_EOP_BAL_STG_SQL",
 						"type": "DatasetReference"
 					}
 				]
@@ -548,7 +550,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "BUSINESS_UNIT",
+									"name": "ENTITY_ID",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -561,7 +563,7 @@
 							{
 								"source": {
 									"name": "FISCAL_YEAR",
-									"type": "String",
+									"type": "Int16",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -573,7 +575,7 @@
 							{
 								"source": {
 									"name": "ACCOUNTING_PERIOD",
-									"type": "String",
+									"type": "Int16",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -608,7 +610,7 @@
 							},
 							{
 								"source": {
-									"name": "BASE_CURRENCY",
+									"name": "CURRENCY_CD_FC",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -633,7 +635,7 @@
 							{
 								"source": {
 									"name": "ARCHIVE_FOR_YEAR",
-									"type": "String",
+									"type": "Int16",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -645,7 +647,7 @@
 							{
 								"source": {
 									"name": "ARCHIVE_FOR_PERIOD",
-									"type": "String",
+									"type": "Int16",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -676,7 +678,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Excel1",
+						"referenceName": "RUN_CONTROL_TBL_XLS",
 						"type": "DatasetReference"
 					}
 				],
@@ -717,7 +719,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[PROCESS_INSTANCE_TBL]",
+						"preCopyScript": "Truncate  table [dbo].[PROCESS_INSTANCE_TBL_SQL]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -806,13 +808,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Excel2",
+						"referenceName": "PROCESS_INSTANCE_TBL_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Sqlouput1",
+						"referenceName": "PROCESS_INSTANCE_TBL_SQL",
 						"type": "DatasetReference"
 					}
 				]
@@ -972,7 +974,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Excel3",
+						"referenceName": "SRC_SYS_CODE_MAP_XLS",
 						"type": "DatasetReference"
 					}
 				],
@@ -1012,9 +1014,7 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[FI_AVGBAL_INT_STG]",
-						"disableMetricsCollection": false
+						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -1147,7 +1147,7 @@
 							{
 								"source": {
 									"name": "Tenor(in months)",
-									"type": "String",
+									"type": "Int16",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1159,7 +1159,7 @@
 							{
 								"source": {
 									"name": "Tenor(in days)",
-									"type": "String",
+									"type": "Int16",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1243,7 +1243,7 @@
 							{
 								"source": {
 									"name": "Repricing Frequency",
-									"type": "String",
+									"type": "Int16",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1303,7 +1303,7 @@
 							{
 								"source": {
 									"name": "Base Rate",
-									"type": "String",
+									"type": "Double",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1353,7 +1353,7 @@
 							{
 								"source": {
 									"name": "Interest Spread Rate",
-									"type": "String",
+									"type": "Double",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1367,7 +1367,7 @@
 							{
 								"source": {
 									"name": "Non Standard Ftp Rate",
-									"type": "String",
+									"type": "Double",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1541,7 +1541,7 @@
 							{
 								"source": {
 									"name": "Interest Rate",
-									"type": "String",
+									"type": "Double",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1562,13 +1562,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Excel4",
+						"referenceName": "FI_AVGBAL_INT_STG_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "FI_AVGBAL_INT_STG_SQL",
 						"type": "DatasetReference"
 					}
 				]

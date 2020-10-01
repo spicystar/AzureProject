@@ -1,0 +1,43 @@
+{
+	"name": "PROCESS_INSTANCE_TBL_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ETL2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCR",
+				"type": "varchar"
+			},
+			{
+				"name": "SEQ_NO",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "DESCRLONG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "PROCESS_INSTANCE_TBL"
+		}
+	}
+}
