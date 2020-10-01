@@ -719,7 +719,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[PROCESS_INSTANCE_TBL_SQL]",
+						"preCopyScript": "Truncate  table [dbo].[PROCESS_INSTANCE_TBL]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
