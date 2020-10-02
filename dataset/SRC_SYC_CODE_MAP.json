@@ -1,0 +1,59 @@
+{
+	"name": "SRC_SYC_CODE_MAP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ETL2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SETID",
+				"type": "varchar"
+			},
+			{
+				"name": "PF_SRC_SYSTEM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PF_SYSTEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST_UPD_DATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MAPPING_COMMENTS",
+				"type": "varchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "varchar"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "OPR_ID",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "SRC_SYS_CODE_MAP"
+		}
+	}
+}

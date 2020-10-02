@@ -7,7 +7,54 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PF_SCENARIO_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ASOF_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CURRENCY_CD_FC",
+				"type": "varchar"
+			},
+			{
+				"name": "SETID",
+				"type": "varchar"
+			},
+			{
+				"name": "ARCHIVE_FOR_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ARCHIVE_FOR_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CPMS_SOURCE_DATA_DIR_PATH",
+				"type": "varchar"
+			}
+		],
 		"typeProperties": {
 			"schema": "dbo",
 			"table": "RUN_CONTROL_TBL"

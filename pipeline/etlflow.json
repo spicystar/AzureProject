@@ -859,128 +859,99 @@
 							{
 								"source": {
 									"name": "SETID",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
 									"name": "SETID",
-									"type": "String",
-									"physicalType": "varchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "PF_SRC_SYSTEM_ID",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
 									"name": "PF_SRC_SYSTEM_ID",
-									"type": "String",
-									"physicalType": "varchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "PF_SYSTEM_CODE",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
 									"name": "PF_SYSTEM_CODE",
-									"type": "String",
-									"physicalType": "varchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "LAST_UPD_DATETIME",
-									"type": "DateTime",
-									"physicalType": "String"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "LAST_UPD_DATETIME",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
 									"name": "MAPPING_COMMENTS",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
 									"name": "MAPPING_COMMENTS",
-									"type": "String",
-									"physicalType": "varchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "EFFDT",
-									"type": "DateTime",
-									"physicalType": "String"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "EFFDT",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
 									"name": "EFF_STATUS",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
 									"name": "EFF_STATUS",
-									"type": "String",
-									"physicalType": "varchar"
+									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"name": "DTTM_STAMP",
-									"type": "DateTime",
-									"physicalType": "String"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "DTTM_STAMP",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "DateTime"
 								}
 							},
 							{
 								"source": {
 									"name": "OPR_ID",
-									"type": "String",
-									"physicalType": "String"
+									"type": "String"
 								},
 								"sink": {
 									"name": "OPR_ID",
-									"type": "String",
-									"physicalType": "varchar"
+									"type": "String"
 								}
 							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						]
 					}
 				},
 				"inputs": [
 					{
 						"referenceName": "SRC_SYS_CODE_MAP_XLS",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "D_SRC_SYS_CODE_MAP",
 						"type": "DatasetReference"
 					}
 				]
