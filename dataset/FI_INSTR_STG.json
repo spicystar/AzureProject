@@ -1,5 +1,5 @@
 {
-	"name": "D_RUN_CONTROL_TBL",
+	"name": "FI_INSTR_STG",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ETL2",
@@ -7,10 +7,6 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "RUN_CONTROL_TBL"
-		}
+		"schema": []
 	}
 }
