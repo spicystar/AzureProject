@@ -8,10 +8,9 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "D_BDW_EOP_BAL_S001",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "D_BDW_EOP_BAL_STG.xlsx",
+				"fileName": "D_BDW_EOP_BAL.xlsx",
 				"container": "etl2"
 			},
 			"firstRowAsHeader": true
