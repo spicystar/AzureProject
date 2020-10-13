@@ -954,6 +954,12 @@
 						"referenceName": "SRC_SYS_CODE_MAP_XLS",
 						"type": "DatasetReference"
 					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SRC_SYC_CODE_MAP",
+						"type": "DatasetReference"
+					}
 				]
 			},
 			{
@@ -985,7 +991,9 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "Truncate  table [dbo].[FI_AVGBAL_INT_STG]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -1540,6 +1548,277 @@
 				"outputs": [
 					{
 						"referenceName": "FI_AVGBAL_INT_STG_SQL",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "PRODUCT_MAP_TBL",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "FI_AVGBAL_INT_STG",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "BUSINESS_UNIT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BUSINESS_UNIT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PRODUCT_SOURCE_ID_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PRODUCT_SOURCE_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PF_SYSTEM_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PF_SYSTEM_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCY_CD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CURRENCY_CD",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_OWNER_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_OWNER",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "EFFDT",
+									"type": "DateTime",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "EFFDT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "BU_CODE_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BU_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PRODUCT_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PRODUCT_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PRODUCT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PRODUCT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_EOP_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_EOP_DBS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_AVE_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_AVE_DBS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_INT_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_INT_DBS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_FTP_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_FTP_DBS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_OBS_DBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_OBS_DBS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FISCAL_YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FISCAL_YEAR",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPD_DATETIME",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LAST_UPD_DATETIME",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "UPDATE_COMMENT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "UPDATE_COMMENT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "PRODUCT_MAP_TBL_XLS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "PRODUCT_MAP_TBL",
 						"type": "DatasetReference"
 					}
 				]

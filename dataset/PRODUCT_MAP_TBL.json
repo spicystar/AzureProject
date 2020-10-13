@@ -1,0 +1,95 @@
+{
+	"name": "PRODUCT_MAP_TBL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "BUSINESS_UNIT",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PF_SYSTEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CD",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_OWNER",
+				"type": "varchar"
+			},
+			{
+				"name": "EFFDT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "BU_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_EOP_DBS",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_AVE_DBS",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_INT_DBS",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_FTP_DBS",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_OBS_DBS",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LAST_UPD_DATETIME",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UPDATE_COMMENT",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "PRODUCT_MAP_TBL"
+		}
+	}
+}

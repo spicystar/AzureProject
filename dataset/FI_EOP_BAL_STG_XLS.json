@@ -8,6 +8,7 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "D_BDW_EOP_BAL_S00",
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "D_BDW_EOP_BAL.xlsx",
