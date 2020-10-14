@@ -1001,7 +1001,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Source System ID",
+									"name": "SRC_SYSTEM_ID",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1013,7 +1013,7 @@
 							},
 							{
 								"source": {
-									"name": "Date",
+									"name": "SRC_DATE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1025,7 +1025,7 @@
 							},
 							{
 								"source": {
-									"name": "Account Number",
+									"name": "ACCOUNT_NUMBER",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1037,7 +1037,7 @@
 							},
 							{
 								"source": {
-									"name": "Source Amount Type Code",
+									"name": "SRC_AMOUNT_TYPE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1049,7 +1049,7 @@
 							},
 							{
 								"source": {
-									"name": "Account Amount(Original Currency)",
+									"name": "ACCT_AMOUNT_ORIG_CURR",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1063,7 +1063,7 @@
 							},
 							{
 								"source": {
-									"name": "Original Account Amount Currency",
+									"name": "ORIG_ACCT_AMOUNT_CURR",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1075,7 +1075,7 @@
 							},
 							{
 								"source": {
-									"name": "BU Code",
+									"name": "BU_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1087,7 +1087,7 @@
 							},
 							{
 								"source": {
-									"name": "Source Product Code",
+									"name": "SOURCE_PROD_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1099,7 +1099,7 @@
 							},
 							{
 								"source": {
-									"name": "Relationship Manager ID",
+									"name": "ACCT_RM_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1111,7 +1111,7 @@
 							},
 							{
 								"source": {
-									"name": "Account Amount(CNY)",
+									"name": "ACCT_AMOUNT_CNY",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1125,8 +1125,8 @@
 							},
 							{
 								"source": {
-									"name": "Tenor(in months)",
-									"type": "Int16",
+									"name": "TENOR_MONTHS",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1137,8 +1137,8 @@
 							},
 							{
 								"source": {
-									"name": "Tenor(in days)",
-									"type": "Int16",
+									"name": "TENOR_DAYS",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1149,7 +1149,7 @@
 							},
 							{
 								"source": {
-									"name": "Open Date",
+									"name": "OPEN_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1161,7 +1161,7 @@
 							},
 							{
 								"source": {
-									"name": "Closed date",
+									"name": "CLOSED_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1173,7 +1173,7 @@
 							},
 							{
 								"source": {
-									"name": "Effective date",
+									"name": "EFFECTIVE_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1185,7 +1185,7 @@
 							},
 							{
 								"source": {
-									"name": "Maturity Date",
+									"name": "MATURITY_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1197,7 +1197,7 @@
 							},
 							{
 								"source": {
-									"name": "Last Repricing Date",
+									"name": "LAST_REPRICING_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1209,7 +1209,7 @@
 							},
 							{
 								"source": {
-									"name": "Next Repricing Date",
+									"name": "NEXT_REPRICING_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1221,8 +1221,8 @@
 							},
 							{
 								"source": {
-									"name": "Repricing Frequency",
-									"type": "Int16",
+									"name": "REPRICING_FREQ",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1233,7 +1233,7 @@
 							},
 							{
 								"source": {
-									"name": "Customer Number",
+									"name": "CUST_NUMBER",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1245,7 +1245,7 @@
 							},
 							{
 								"source": {
-									"name": "Reg Loan Grade",
+									"name": "REG_LOAN_GRADE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1257,7 +1257,7 @@
 							},
 							{
 								"source": {
-									"name": "Ho Loan Grade",
+									"name": "HO_LOAN_GRADE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1269,7 +1269,7 @@
 							},
 							{
 								"source": {
-									"name": "NPL Borrower Indicator",
+									"name": "NPL_BORROWER_IND",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1281,8 +1281,8 @@
 							},
 							{
 								"source": {
-									"name": "Base Rate",
-									"type": "Double",
+									"name": "BASE_RATE",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1295,7 +1295,7 @@
 							},
 							{
 								"source": {
-									"name": "Base Rate Type",
+									"name": "BASE_RATE_TYPE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1307,7 +1307,7 @@
 							},
 							{
 								"source": {
-									"name": "Finacial Categ Code",
+									"name": "FINANCIAL_CAT_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1319,7 +1319,7 @@
 							},
 							{
 								"source": {
-									"name": "Financial Categ Desc",
+									"name": "FINANCIAL_CAT_DESCR",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1331,8 +1331,8 @@
 							},
 							{
 								"source": {
-									"name": "Interest Spread Rate",
-									"type": "Double",
+									"name": "INTEREST_SPREAD_RATE",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1345,8 +1345,8 @@
 							},
 							{
 								"source": {
-									"name": "Non Standard Ftp Rate",
-									"type": "Double",
+									"name": "NON_STD_FTP_RATE",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1359,7 +1359,7 @@
 							},
 							{
 								"source": {
-									"name": "Account Rate Type",
+									"name": "ACCT_RATE_TYPE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1371,7 +1371,7 @@
 							},
 							{
 								"source": {
-									"name": "Account Status Code",
+									"name": "ACCT_STATUS_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1383,7 +1383,7 @@
 							},
 							{
 								"source": {
-									"name": "Account Outstanding Balance",
+									"name": "ACCT_OUTSTAND_BAL",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1397,7 +1397,7 @@
 							},
 							{
 								"source": {
-									"name": "Loan Indicator",
+									"name": "LOAN_INDICATOR",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1409,7 +1409,7 @@
 							},
 							{
 								"source": {
-									"name": "Suspend Interest Indicator",
+									"name": "SUSPEND_INTEREST_IND",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1421,7 +1421,7 @@
 							},
 							{
 								"source": {
-									"name": "Branch ID",
+									"name": "BRANCH_ID",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1433,7 +1433,7 @@
 							},
 							{
 								"source": {
-									"name": "Customer Name(English )",
+									"name": "CUST_NAME_ENGLISH",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1445,7 +1445,7 @@
 							},
 							{
 								"source": {
-									"name": "Customer Relationship Manager ID",
+									"name": "CUST_RM_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1457,7 +1457,7 @@
 							},
 							{
 								"source": {
-									"name": "Account Currency Code",
+									"name": "ACCT_CURRENCY_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1469,7 +1469,7 @@
 							},
 							{
 								"source": {
-									"name": "Next Rollover Date",
+									"name": "NEXT_ROLLOVER_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1481,7 +1481,7 @@
 							},
 							{
 								"source": {
-									"name": "Next Term Maturity Date",
+									"name": "NEXT_TERM_MATURITY_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1493,7 +1493,7 @@
 							},
 							{
 								"source": {
-									"name": "Converted Account Amount",
+									"name": "CONV_ACCT_AMOUNT",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1507,7 +1507,7 @@
 							},
 							{
 								"source": {
-									"name": "Last Rollover Date",
+									"name": "LAST_ROLLOVER_DATE",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
@@ -1519,8 +1519,8 @@
 							},
 							{
 								"source": {
-									"name": "Interest Rate",
-									"type": "Double",
+									"name": "FI_INTEREST_RATE",
+									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
