@@ -1,0 +1,42 @@
+{
+	"name": "BU_CODE_DIM_XLS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "BU_CODE_TBL",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "BU_CODE_DIM.xlsx",
+				"container": "etl2"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "BU_CODE",
+				"type": "String"
+			},
+			{
+				"name": "CUSTOMER_OWNER",
+				"type": "String"
+			},
+			{
+				"name": "DESCR",
+				"type": "String"
+			},
+			{
+				"name": "FPL_GROUP",
+				"type": "String"
+			},
+			{
+				"name": "FPL_GROUP_DESCR",
+				"type": "String"
+			}
+		]
+	}
+}

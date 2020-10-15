@@ -1,0 +1,37 @@
+{
+	"name": "BU_CODE_DIM_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "BU_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CUSTOMER_OWNER",
+				"type": "varchar"
+			},
+			{
+				"name": "DESCR",
+				"type": "varchar"
+			},
+			{
+				"name": "FPL_GROUP",
+				"type": "varchar"
+			},
+			{
+				"name": "FPL_GROUP_DESCR",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "BU_CODE_DIM"
+		}
+	}
+}
