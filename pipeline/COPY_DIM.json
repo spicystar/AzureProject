@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "TPOINT_DIM",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -23,7 +23,9 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "Truncate  table [dbo].[BU_CODE_DIM]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -31,48 +33,72 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "BU_CODE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "BU_CODE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "CUSTOMER_OWNER",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_OWNER",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DESCR",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FPL_GROUP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FPL_GROUP",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FPL_GROUP_DESCR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FPL_GROUP_DESCR",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
 									"name": "SETID",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
 									"name": "SETID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "TRANS_POINT_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "TRANS_POINT_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "TRANS_POINT_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "TRANS_POINT_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "BRANCH_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "BRANCH_ID",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -135,46 +161,16 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "TPOINT_DIM_XLS",
+						"referenceName": "BU_CODE_DIM_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "TPOINT_DIM_SQL",
+						"referenceName": "BU_CODE_DIM_SQL",
 						"type": "DatasetReference"
 					}
 				]
-			},
-			{
-				"name": "ETL2",
-				"type": "ExecuteDataFlow",
-				"dependsOn": [
-					{
-						"activity": "TPOINT_DIM",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"dataflow": {
-						"referenceName": "ETL2",
-						"type": "DataFlowReference"
-					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
-					}
-				}
 			}
 		],
 		"annotations": []
