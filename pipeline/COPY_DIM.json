@@ -24,7 +24,8 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[BU_CODE_DIM]",
+						"preCopyScript": "Truncate  table [dbo].[PRODUCT_MAP_TBL]",
+						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -33,72 +34,60 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "BU_CODE",
+									"name": "ENTITY_ID",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "BU_CODE",
+									"name": "ENTITY_ID",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "CUSTOMER_OWNER",
+									"name": "PRODUCT_SOURCE_ID",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "CUSTOMER_OWNER",
+									"name": "PRODUCT_SOURCE_ID",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "DESCR",
+									"name": "PF_SYSTEM_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "DESCR",
+									"name": "PF_SYSTEM_CODE",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "FPL_GROUP",
+									"name": "CURRENCY_CD",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "FPL_GROUP",
+									"name": "CURRENCY_CD",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "FPL_GROUP_DESCR",
+									"name": "ORG_UNIT_ID",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "FPL_GROUP_DESCR",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SETID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "SETID",
+									"name": "ORG_UNIT_ID",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -117,36 +106,144 @@
 							},
 							{
 								"source": {
-									"name": "EFF_STATUS",
+									"name": "BU_CODE",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "EFF_STATUS",
+									"name": "BU_CODE",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "DTTM_STAMP",
+									"name": "PRODUCT_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PRODUCT_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "PRODUCT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PRODUCT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_EOP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_EOP",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_AVE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_AVE",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_INT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_INT",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_FTP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_FTP",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "GL_ACCOUNT_OBS",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "GL_ACCOUNT_OBS",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FISCAL_YEAR",
+									"type": "Int16",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FISCAL_YEAR",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "Int16",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPD_DATETIME",
 									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "DTTM_STAMP",
+									"name": "LAST_UPD_DATETIME",
 									"type": "DateTime",
 									"physicalType": "datetime"
 								}
 							},
 							{
 								"source": {
-									"name": "OPR_ID",
+									"name": "UPDATE_COMMENT",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "OPR_ID",
+									"name": "UPDATE_COMMENT",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -161,13 +258,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "BU_CODE_DIM_XLS",
+						"referenceName": "PRODUCT_MAP_TBL_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "BU_CODE_DIM_SQL",
+						"referenceName": "PRODUCT_MAP_TBL",
 						"type": "DatasetReference"
 					}
 				]
