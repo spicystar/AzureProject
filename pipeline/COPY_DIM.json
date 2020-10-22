@@ -80,7 +80,7 @@
 							},
 							{
 								"source": {
-									"name": "ACCT_AMOUNT_ORIG_CURR",
+									"name": "AMOUNT_TC",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -94,7 +94,7 @@
 							},
 							{
 								"source": {
-									"name": "ORIG_ACCT_AMOUNT_CURR",
+									"name": "CURRENCY_CD_TC",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -142,7 +142,7 @@
 							},
 							{
 								"source": {
-									"name": "ACCT_AMOUNT_CNY",
+									"name": "AMOUNT_FC",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -281,7 +281,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "REG_LOAN_GRADE",
+									"name": "REG_LOAN_GRAD",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -409,7 +409,7 @@
 								"sink": {
 									"name": "ACCT_STATUS_CODE",
 									"type": "String",
-									"physicalType": "varchar"
+									"physicalType": "nchar"
 								}
 							},
 							{
@@ -420,10 +420,8 @@
 								},
 								"sink": {
 									"name": "ACCT_OUTSTAND_BAL",
-									"type": "Decimal",
-									"physicalType": "money",
-									"scale": 4,
-									"precision": 19
+									"type": "String",
+									"physicalType": "nchar"
 								}
 							},
 							{
