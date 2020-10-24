@@ -570,7 +570,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "FI_AVGBAL_INT_STG_XLS",
+						"referenceName": "PRODUCT_MAP_TBL_XLS",
 						"type": "DatasetReference"
 					}
 				],

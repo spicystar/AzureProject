@@ -8,7 +8,6 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "D_PRODUCT_MAP_TBL",
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "PRODUCT_MAP_TBL.xlsx",
