@@ -8,10 +8,10 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "SourceAverageBalanceInterest",
+			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "SourceAverageBalanceInterest.xlsx",
+				"fileName": "Book2.xlsx",
 				"container": "etl2"
 			},
 			"firstRowAsHeader": true
