@@ -3,188 +3,10 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "D_RUN_CONTROL_TBL1",
-				"description": "Copying first excel file into SQL",
-				"type": "Copy",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "ExcelSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[RUN_CONTROL_TBL]",
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "ENTITY_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ENTITY_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "FISCAL_YEAR",
-									"type": "Int16",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "FISCAL_YEAR",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCOUNTING_PERIOD",
-									"type": "Int16",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCOUNTING_PERIOD",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "PF_SCENARIO_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "PF_SCENARIO_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ASOF_DT",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ASOF_DT",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "CURRENCY_CD_FC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CURRENCY_CD_FC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SETID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "SETID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ARCHIVE_FOR_YEAR",
-									"type": "Int16",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ARCHIVE_FOR_YEAR",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "ARCHIVE_FOR_PERIOD",
-									"type": "Int16",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ARCHIVE_FOR_PERIOD",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "CPMS_SOURCE_DATA_DIR_PATH",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CPMS_SOURCE_DATA_DIR_PATH",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "RUN_CONTROL_TBL_XLS",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "D_RUN_CONTROL_TBL",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "D_SRC_SYS_CODE_MAP",
 				"description": "Copying first excel file into SQL",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "D_RUN_CONTROL_TBL1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -1324,7 +1146,9 @@
 						}
 					},
 					"sink": {
-						"type": "AzureSqlSink"
+						"type": "AzureSqlSink",
+						"preCopyScript": "Truncate  table [dbo].[CHANNEL_ID_DIM]",
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -1356,7 +1180,7 @@
 							},
 							{
 								"source": {
-									"name": "DESCR40",
+									"name": "CHANNEL_DESC",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1368,7 +1192,7 @@
 							},
 							{
 								"source": {
-									"name": "CHANNEL_TYPE",
+									"name": "CHANNEL_TYPE_ID",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -1380,7 +1204,9 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "CHANNEL_TYPE_DESC",
+									"type": "String",
+									"physicalType": "String"
 								},
 								"sink": {
 									"name": "CHANNEL_TYPE_DESC",
@@ -1389,6 +1215,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "ORG_UNIT_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "ORG_UNIT_ID",
 									"type": "String",
@@ -1396,6 +1227,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "TRANS_POINT_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "TRANS_POINT_ID",
 									"type": "String",
@@ -1403,6 +1239,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_1_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_1_ID",
 									"type": "String",
@@ -1410,6 +1251,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_2_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_2_ID",
 									"type": "String",
@@ -1417,6 +1263,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_3_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_3_ID",
 									"type": "String",
@@ -1424,6 +1275,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_4_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_4_ID",
 									"type": "String",
@@ -1431,6 +1287,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_1_DESC",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_1_DESC",
 									"type": "String",
@@ -1438,6 +1299,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_2_DESC",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_2_DESC",
 									"type": "String",
@@ -1445,6 +1311,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_3_DESC",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_3_DESC",
 									"type": "String",
@@ -1452,6 +1323,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "CHANNEL_LEVEL_4_DESC",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "CHANNEL_LEVEL_4_DESC",
 									"type": "String",
@@ -1461,7 +1337,7 @@
 							{
 								"source": {
 									"name": "EFFDT",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1483,6 +1359,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DTTM_STAMP",
+									"type": "DateTime",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "DTTM_STAMP",
 									"type": "DateTime",
@@ -1490,6 +1371,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "OPR_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "OPR_ID",
 									"type": "String",
@@ -1516,6 +1402,36 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "ETL2",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "CHANNEL_ID_DIM",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "ETL2",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					}
+				}
 			}
 		],
 		"annotations": []
