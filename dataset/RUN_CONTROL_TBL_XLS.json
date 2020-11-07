@@ -11,7 +11,7 @@
 			"sheetName": "D_RUN_CONTROL_TBL",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "RUN_CONTROL_TBL.xlsx",
+				"fileName": "D_RUN_CONTROL_TBL.xlsx",
 				"container": "etl2"
 			},
 			"firstRowAsHeader": true

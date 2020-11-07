@@ -8,11 +8,11 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "CHANNEL_DIM",
+			"sheetName": "D_CHANNEL_D00",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
-				"container": "workbook1"
+				"fileName": "D_CHANNEL_D00.xlsx",
+				"container": "etl2"
 			},
 			"firstRowAsHeader": true
 		},
