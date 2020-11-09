@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "D_SRC_SYS_CODE_MAP",
+				"name": "FI_AVGBAL_INT_STG",
 				"description": "Copying first excel file into SQL",
 				"type": "Copy",
 				"dependsOn": [],
@@ -25,150 +25,8 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[SRC_SYS_CODE_MAP]",
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "SETID",
-									"type": "String"
-								},
-								"sink": {
-									"name": "SETID",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "PF_SRC_SYSTEM_ID",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PF_SRC_SYSTEM_ID",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "PF_SYSTEM_CODE",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PF_SYSTEM_CODE",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "LAST_UPD_DATETIME",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "LAST_UPD_DATETIME",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "MAPPING_COMMENTS",
-									"type": "String"
-								},
-								"sink": {
-									"name": "MAPPING_COMMENTS",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "EFFDT",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "EFFDT",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "EFF_STATUS",
-									"type": "String"
-								},
-								"sink": {
-									"name": "EFF_STATUS",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "DTTM_STAMP",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "DTTM_STAMP",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "OPR_ID",
-									"type": "String"
-								},
-								"sink": {
-									"name": "OPR_ID",
-									"type": "String"
-								}
-							}
-						]
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "SRC_SYS_CODE_MAP_XLS",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "SRC_SYC_CODE_MAP",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "FI_AVGBAL_INT_STG",
-				"description": "Copying first excel file into SQL",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "D_SRC_SYS_CODE_MAP",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "ExcelSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true
-						}
-					},
-					"sink": {
-						"type": "AzureSqlSink",
 						"preCopyScript": "Truncate  table [dbo].[FI_AVGBAL_INT_STG]",
+						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -646,7 +504,7 @@
 							{
 								"source": {
 									"name": "NEXT_ROLLOVER_DATE",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -658,7 +516,7 @@
 							{
 								"source": {
 									"name": "NEXT_TERM_MATURITY_DATE",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -679,32 +537,6 @@
 									"physicalType": "money",
 									"scale": 4,
 									"precision": 19
-								}
-							},
-							{
-								"source": {
-									"name": "LAST_ROLLOVER_DATE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "LAST_ROLLOVER_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "FI_INTEREST_RATE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "FI_INTEREST_RATE",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 0,
-									"precision": 18
 								}
 							}
 						],
