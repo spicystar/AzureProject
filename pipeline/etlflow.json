@@ -799,13 +799,6 @@
 									"type": "DateTime",
 									"physicalType": "datetime"
 								}
-							},
-							{
-								"sink": {
-									"name": "UPDATE_COMMENT",
-									"type": "String",
-									"physicalType": "varchar"
-								}
 							}
 						],
 						"typeConversion": true,
@@ -1034,7 +1027,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[CHANNEL_ID_DIM]",
+						"preCopyScript": "Truncate  table [dbo].[CHANNEL_DIM]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -1224,7 +1217,7 @@
 							{
 								"source": {
 									"name": "EFFDT",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -1248,7 +1241,7 @@
 							{
 								"source": {
 									"name": "DTTM_STAMP",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
