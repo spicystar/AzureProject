@@ -33,7 +33,74 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "PF_SRC_SYSTEM_ID",
+									"name": "ENTITY_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENTITY_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FISCAL_YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FISCAL_YEAR",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "PF_SCENARIO_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PF_SCENARIO_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ASOF_DT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ASOF_DT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"sink": {
+									"name": "CURRENCY_CD_FC",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "SETID",
 									"type": "String",
 									"physicalType": "String"
 								},
@@ -45,76 +112,31 @@
 							},
 							{
 								"source": {
-									"name": "PF_SRC_SYSTEM_ID",
+									"name": "ARCHIVE_FOR_YEAR",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "PF_SRC_SYSTEM_ID",
-									"type": "String",
-									"physicalType": "varchar"
+									"name": "ARCHIVE_FOR_YEAR",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
-									"name": "PF_SYSTEM_CODE",
+									"name": "ARCHIVE_FOR_PERIOD",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "PF_SYSTEM_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "LAST_UPD_DATETIME",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "LAST_UPD_DATETIME",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "MAPPING_COMMENTS",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "MAPPING_COMMENTS",
-									"type": "String",
-									"physicalType": "varchar"
+									"name": "ARCHIVE_FOR_PERIOD",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"sink": {
-									"name": "EFFDT",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"sink": {
-									"name": "EFF_STATUS",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "DTTM_STAMP",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"sink": {
-									"name": "OPR_ID",
+									"name": "CPMS_SOURCE_DATA_DIR_PATH",
 									"type": "String",
 									"physicalType": "varchar"
 								}
@@ -129,13 +151,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SRC_SYS_CODE_MAP_XLS",
+						"referenceName": "RUN_CONTROL_TBL_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "SRC_SYC_CODE_MAP",
+						"referenceName": "D_RUN_CONTROL_TBL",
 						"type": "DatasetReference"
 					}
 				]
