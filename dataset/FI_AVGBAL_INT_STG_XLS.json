@@ -8,10 +8,10 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "D_BDW_AVGBAL_INT_S00",
+			"sheetName": "Sheet1",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "D_BDW_AVGBAL_INT_S00.xlsx",
+				"fileName": "Book2.xlsx",
 				"container": "etl2"
 			},
 			"firstRowAsHeader": true
