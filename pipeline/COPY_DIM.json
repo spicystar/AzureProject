@@ -24,7 +24,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "Truncate  table [dbo].[FI_AVGBAL_INT_STG]",
+						"preCopyScript": "SELECT DISTINCT ACCOUNT_NUMBER\nFROM FI_AVGBAL_INT_STG",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
