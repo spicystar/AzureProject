@@ -11,7 +11,7 @@
 			"sheetName": "D_BDW_EOP_BAL_S00",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "D_BDW_EOP_BAL.xlsx",
+				"fileName": "D_BDW_EOP_BAL_S00.xlsx",
 				"container": "etl2"
 			},
 			"firstRowAsHeader": true

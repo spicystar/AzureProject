@@ -11,7 +11,7 @@
 			"sheetName": "D_PROCESS_INSTANCE_TBL",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "PROCESS_INSTANCE_TBL.xlsx",
+				"fileName": "D_PROCESS_INSTANCE_TBL.xlsx",
 				"container": "etl2"
 			},
 			"firstRowAsHeader": true

@@ -1,0 +1,249 @@
+{
+	"name": "FI_INSTR_DIM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "FI_INTRUMENT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ASOF_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PF_SYSTEM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "PF_SRC_SYSTEM_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TRANSACTION_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FI_START_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "FI_END_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CURRENCY_CD_TC",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CD_FC",
+				"type": "varchar"
+			},
+			{
+				"name": "FI_BALANCE_AMT_TC",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "FI_BALANCE_AMT_FC",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "FI_TERM_MATURITY",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FI_TERM_UOM",
+				"type": "varchar"
+			},
+			{
+				"name": "RATE_RESET_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "FI_INTEREST_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FI_FLOOR_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "BU_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "TENOR_MONTHS",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CLOSED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_REPRICING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "NEXT_REPRICING_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "REPRICING_FREQ",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "REG_LOAN_GRADE",
+				"type": "varchar"
+			},
+			{
+				"name": "HO_LOAN_GRADE",
+				"type": "varchar"
+			},
+			{
+				"name": "NPL_BORROWER_IND",
+				"type": "varchar"
+			},
+			{
+				"name": "BASE_RATE_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "INTEREST_SPREAD_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "NON_STD_FTP_RATE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "ACCT_STATUS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "LOAN_INDICATOR",
+				"type": "varchar"
+			},
+			{
+				"name": "SUSPEND_INTEREST_IND",
+				"type": "varchar"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_NAME_ENGLISH",
+				"type": "varchar"
+			},
+			{
+				"name": "BU_CODE_DERIVE",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_EOP",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_AVE",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_INT",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_FTP",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT_OBS",
+				"type": "varchar"
+			},
+			{
+				"name": "OPEN_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "MATURITY_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FI_INSTR_DIM"
+		}
+	}
+}

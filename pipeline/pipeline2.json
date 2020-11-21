@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "ETL2",
+						"referenceName": "ETL2_1",
 						"type": "DataFlowReference"
 					},
 					"compute": {

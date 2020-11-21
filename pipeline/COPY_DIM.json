@@ -24,7 +24,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "SELECT DISTINCT ACCOUNT_NUMBER\nFROM FI_AVGBAL_INT_STG",
+						"preCopyScript": "Truncate  table [dbo].[FI_EOP_BAL_STG]",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
@@ -33,508 +33,74 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "SRC_SYSTEM_ID",
+									"name": "BUSINESS_UNIT",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "SRC_SYSTEM_ID",
+									"name": "ENTITY_ID",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "SRC_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "SRC_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCOUNT_NUMBER",
+									"name": "SOURCE",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ACCOUNT_NUMBER",
+									"name": "SOURCE_ID",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "SRC_AMOUNT_TYPE",
+									"name": "DESCR",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "SRC_AMOUNT_TYPE",
+									"name": "DESCR",
 									"type": "String",
 									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
-									"name": "ACCT_AMOUNT_ORIG_CURR",
+									"name": "SEQ_NO",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ACCT_AMOUNT_ORIG_CURR",
-									"type": "Decimal",
-									"physicalType": "money",
-									"scale": 4,
-									"precision": 19
-								}
-							},
-							{
-								"source": {
-									"name": "ORIG_ACCT_AMOUNT_CURR",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ORIG_ACCT_AMOUNT_CURR",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "BU_CODE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "BU_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SOURCE_PROD_CODE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "SOURCE_PROD_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCT_RM_CODE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCT_RM_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCT_AMOUNT_CNY",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCT_AMOUNT_CNY",
-									"type": "Decimal",
-									"physicalType": "money",
-									"scale": 4,
-									"precision": 19
-								}
-							},
-							{
-								"source": {
-									"name": "TENOR_MONTHS",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "TENOR_MONTHS",
+									"name": "SEQ_NO",
 									"type": "Int32",
 									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
-									"name": "TENOR_DAYS",
+									"name": "PROCESS_INSTANCE",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "TENOR_DAYS",
+									"name": "PROCESS_INSTANCE",
 									"type": "Int32",
 									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
-									"name": "OPEN_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "OPEN_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "CLOSED_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CLOSED_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "EFFECTIVE_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "EFFECTIVE_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "MATURITY_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "MATURITY_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "LAST_REPRICING_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "LAST_REPRICING_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "NEXT_REPRICING_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "NEXT_REPRICING_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "REPRICING_FREQ",
+									"name": "DESCRLONG",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "REPRICING_FREQ",
-									"type": "Int32",
-									"physicalType": "int"
-								}
-							},
-							{
-								"source": {
-									"name": "CUST_NUMBER",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CUST_NUMBER",
+									"name": "DESCRLONG",
 									"type": "String",
 									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "REG_LOAN_GRADE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "REG_LOAN_GRADE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "HO_LOAN_GRADE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "HO_LOAN_GRADE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "NPL_BORROWER_IND",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "NPL_BORROWER_IND",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "BASE_RATE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "BASE_RATE",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 0,
-									"precision": 18
-								}
-							},
-							{
-								"source": {
-									"name": "BASE_RATE_TYPE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "BASE_RATE_TYPE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "FINANCIAL_CAT_CODE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "FINANCIAL_CAT_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "FINANCIAL_CAT_DESCR",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "FINANCIAL_CAT_DESCR",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "INTEREST_SPREAD_RATE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "INTEREST_SPREAD_RATE",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 0,
-									"precision": 18
-								}
-							},
-							{
-								"source": {
-									"name": "NON_STD_FTP_RATE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "NON_STD_FTP_RATE",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 0,
-									"precision": 18
-								}
-							},
-							{
-								"source": {
-									"name": "ACCT_RATE_TYPE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCT_RATE_TYPE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCT_STATUS_CODE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCT_STATUS_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCT_OUTSTAND_BAL",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCT_OUTSTAND_BAL",
-									"type": "Decimal",
-									"physicalType": "money",
-									"scale": 4,
-									"precision": 19
-								}
-							},
-							{
-								"source": {
-									"name": "LOAN_INDICATOR",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "LOAN_INDICATOR",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SUSPEND_INTEREST_IND",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "SUSPEND_INTEREST_IND",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "BRANCH_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "BRANCH_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "CUST_NAME_ENGLISH",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CUST_NAME_ENGLISH",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "CUST_RM_CODE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CUST_RM_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCT_CURRENCY_CODE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCT_CURRENCY_CODE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "NEXT_ROLLOVER_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "NEXT_ROLLOVER_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "NEXT_TERM_MATURITY_DATE",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "NEXT_TERM_MATURITY_DATE",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "CONV_ACCT_AMOUNT",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "CONV_ACCT_AMOUNT",
-									"type": "Decimal",
-									"physicalType": "money",
-									"scale": 4,
-									"precision": 19
 								}
 							}
 						],
@@ -547,13 +113,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "FI_AVGBAL_INT_STG_XLS",
+						"referenceName": "PROCESS_INSTANCE_TBL_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "FI_AVGBAL_INT_STG_SQL",
+						"referenceName": "PROCESS_INSTANCE_TBL_SQL",
 						"type": "DatasetReference"
 					}
 				]
