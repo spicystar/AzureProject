@@ -1,0 +1,115 @@
+{
+	"name": "IL_BALANCE_FACT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "FI_INSTRUMENT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PF_SCENARIO_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "SOURCE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ACCOUNT",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CUST_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_SOURCE_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "PRODUCT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "CHANNEL_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CD_TC",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CD_FC",
+				"type": "varchar"
+			},
+			{
+				"name": "FI_BALANCE_AMT_TC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FI_BALANCE_AMT_FC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "FI_BALANCE_AMT_RC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "IL_BALANCE_FACT"
+		}
+	}
+}
