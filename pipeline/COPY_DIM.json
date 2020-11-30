@@ -32,6 +32,78 @@
 						"mappings": [
 							{
 								"source": {
+									"name": "ENTITY_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ENTITY_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "FISCAL_YEAR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FISCAL_YEAR",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ACCOUNTING_PERIOD",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "PF_SCENARIO_ID",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PF_SCENARIO_ID",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ASOF_DT",
+									"type": "DateTime",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ASOF_DT",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								}
+							},
+							{
+								"source": {
+									"name": "CURRENCY_CD_FC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CURRENCY_CD_FC",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
 									"name": "SETID",
 									"type": "String",
 									"physicalType": "String"
@@ -40,270 +112,6 @@
 									"name": "SETID",
 									"type": "String",
 									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCOUNT_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCOUNT_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCOUNT_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCOUNT_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCOUNT_TYPE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCOUNT_TYPE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACCOUNT_TYPE_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACCOUNT_TYPE_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ML_ACCOUNT_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ML_ACCOUNT_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_1_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_1_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_2_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_2_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_3_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_3_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_4_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_4_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_5_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_5_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_6_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_6_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_1_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_1_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_2_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_2_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_3_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_3_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_4_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_4_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_5_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_5_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "ACC_LEVEL_6_DESC",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ACC_LEVEL_6_DESC",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "SIGNED_VALUE",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "SIGNED_VALUE",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "EFFDT",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "EFFDT",
-									"type": "DateTime",
-									"physicalType": "datetime"
-								}
-							},
-							{
-								"source": {
-									"name": "EFF_STATUS",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "EFF_STATUS",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "OPR_ID",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "OPR_ID",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
-									"name": "DTTM_STAMP",
-									"type": "DateTime",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "DTTM_STAMP",
-									"type": "DateTime",
-									"physicalType": "datetime"
 								}
 							}
 						],
@@ -316,13 +124,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ACCOUNT_DIM_XLS",
+						"referenceName": "RUN_CONTROL_TBL_XLS",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "ACCOUNT_DIM_SQL",
+						"referenceName": "D_RUN_CONTROL_TBL",
 						"type": "DatasetReference"
 					}
 				]
