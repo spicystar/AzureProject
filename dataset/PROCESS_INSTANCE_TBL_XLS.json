@@ -8,29 +8,129 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "D_PROCESS_INSTANCE_TBL",
+			"sheetName": "ACCOUNT_DIM",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "D_PROCESS_INSTANCE_TBL.xlsx",
-				"container": "etl2"
+				"fileName": "ACCOUNT_DIM.xlsx",
+				"container": "etl3"
 			},
 			"firstRowAsHeader": true
 		},
 		"schema": [
 			{
-				"name": "ENTITY_ID",
+				"name": "SETID",
 				"type": "String"
 			},
 			{
-				"name": "SOURCE_ID",
+				"name": "ACCOUNT_ID",
 				"type": "String"
 			},
 			{
-				"name": "DESCR",
+				"name": "ACCOUNT_DESC",
 				"type": "String"
 			},
 			{
-				"name": "SEQ_NO",
+				"name": "ACCOUNT_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNT_TYPE_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ML_ACCOUNT_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_1_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_2_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_3_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_4_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_5_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_6_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_1_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_2_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_3_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_4_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_5_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ACC_LEVEL_6_DESC",
+				"type": "String"
+			},
+			{
+				"name": "ABC_ACCOUNT_FLG",
+				"type": "String"
+			},
+			{
+				"name": "GL_ACCOUNT_FLG",
+				"type": "String"
+			},
+			{
+				"name": "ML_ACCOUNT_FLG",
+				"type": "String"
+			},
+			{
+				"name": "IL_ACCOUNT_FLG",
+				"type": "String"
+			},
+			{
+				"name": "BALANCE_FWD_FLG",
+				"type": "String"
+			},
+			{
+				"name": "ABC_OBJ_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "ABC_OBJ_ID",
+				"type": "String"
+			},
+			{
+				"name": "SIGNED_VALUE",
+				"type": "String"
+			},
+			{
+				"name": "SOURCE_ACCT_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "EFFDT",
+				"type": "String"
+			},
+			{
+				"name": "EFF_STATUS",
 				"type": "String"
 			},
 			{
@@ -38,7 +138,35 @@
 				"type": "String"
 			},
 			{
-				"name": "DESCRLONG",
+				"name": "LOAD_DTTM",
+				"type": "String"
+			},
+			{
+				"name": "LASTUPDDTTM",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
+				"type": "String"
+			},
+			{
+				"name": "SIGNED_VALUE",
+				"type": "String"
+			},
+			{
+				"name": "EFFDT",
+				"type": "String"
+			},
+			{
+				"name": "EFF_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP",
+				"type": "String"
+			},
+			{
+				"name": "OPR_ID",
 				"type": "String"
 			}
 		]
