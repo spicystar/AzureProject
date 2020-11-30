@@ -248,18 +248,6 @@
 							},
 							{
 								"source": {
-									"name": "ABC_ACCOUNT_FLG",
-									"type": "String",
-									"physicalType": "String"
-								},
-								"sink": {
-									"name": "ABC_ACCOUNT_FLG",
-									"type": "String",
-									"physicalType": "varchar"
-								}
-							},
-							{
-								"source": {
 									"name": "SIGNED_VALUE",
 									"type": "String",
 									"physicalType": "String"
