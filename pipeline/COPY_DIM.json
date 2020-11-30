@@ -273,7 +273,7 @@
 							{
 								"source": {
 									"name": "EFFDT",
-									"type": "String",
+									"type": "DateTime",
 									"physicalType": "String"
 								},
 								"sink": {
@@ -307,6 +307,11 @@
 								}
 							},
 							{
+								"source": {
+									"name": "DTTM_STAMP",
+									"type": "DateTime",
+									"physicalType": "String"
+								},
 								"sink": {
 									"name": "DTTM_STAMP",
 									"type": "DateTime",
