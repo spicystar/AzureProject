@@ -1,9 +1,9 @@
 {
-	"name": "ETL3_Work",
+	"name": "ETL3_1",
 	"properties": {
 		"activities": [
 			{
-				"name": "ETL3_copy2",
+				"name": "ETL3_copy1",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "ETL3_copy2",
+						"referenceName": "ETL3_copy1",
 						"type": "DataFlowReference"
 					},
 					"compute": {
