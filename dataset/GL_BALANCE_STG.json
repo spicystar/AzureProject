@@ -1,0 +1,162 @@
+{
+	"name": "GL_BALANCE_STG",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Inputblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "PS_LEDGER1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "GL_BALANCE_STG.xlsb.xlsx",
+				"container": "etl3b"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "String"
+			},
+			{
+				"name": "LEDGER_ID",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "String"
+			},
+			{
+				"name": "ALTACCT",
+				"type": "String"
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "String"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "String"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "String"
+			},
+			{
+				"name": "FUND_CODE",
+				"type": "String"
+			},
+			{
+				"name": "CLASS_FLD",
+				"type": "String"
+			},
+			{
+				"name": "PROGRAM_CODE",
+				"type": "String"
+			},
+			{
+				"name": "BUDGET_REF",
+				"type": "String"
+			},
+			{
+				"name": "AFFILIATE",
+				"type": "String"
+			},
+			{
+				"name": "AFFILIATE_INTRA1",
+				"type": "String"
+			},
+			{
+				"name": "AFFILIATE_INTRA2",
+				"type": "String"
+			},
+			{
+				"name": "CHARTFIELD1",
+				"type": "String"
+			},
+			{
+				"name": "CHARTFIELD2",
+				"type": "String"
+			},
+			{
+				"name": "CHARTFIELD3",
+				"type": "String"
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "String"
+			},
+			{
+				"name": "BOOK_CODE",
+				"type": "String"
+			},
+			{
+				"name": "GL_ADJUST_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CD_TC",
+				"type": "String"
+			},
+			{
+				"name": "STATISTICS_CODE",
+				"type": "String"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "String"
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "String"
+			},
+			{
+				"name": "POSTED_AMT_RC",
+				"type": "String"
+			},
+			{
+				"name": "POSTED_AMT_FC",
+				"type": "String"
+			},
+			{
+				"name": "POSTED_AMT_TC",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CD_FC",
+				"type": "String"
+			},
+			{
+				"name": "CURRENCY_CD_RC",
+				"type": "String"
+			},
+			{
+				"name": "DTTM_STAMP_SEC",
+				"type": "String"
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "String"
+			},
+			{
+				"name": "LOAD_DTTM",
+				"type": "String"
+			},
+			{
+				"name": "LASTUPDDTTM",
+				"type": "String"
+			},
+			{
+				"name": "ERROR_FLAG",
+				"type": "String"
+			},
+			{
+				"name": "DBXCONCATCOL",
+				"type": "String"
+			}
+		]
+	}
+}
