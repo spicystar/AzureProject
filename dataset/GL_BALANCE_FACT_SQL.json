@@ -1,0 +1,169 @@
+{
+	"name": "GL_BALANCE_FACT_SQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OutputSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ENTITY_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "LEDGER_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ACCOUNT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "ALTACCT",
+				"type": "varchar"
+			},
+			{
+				"name": "ORG_UNIT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "BRANCH_ID",
+				"type": "nchar"
+			},
+			{
+				"name": "PRODUCT",
+				"type": "varchar"
+			},
+			{
+				"name": "FUND_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "CLASS_FLD",
+				"type": "varchar"
+			},
+			{
+				"name": "PROGRAM_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "BUDGET_REF",
+				"type": "varchar"
+			},
+			{
+				"name": "AFFILIATE",
+				"type": "varchar"
+			},
+			{
+				"name": "AFFILIATE_INTRA1",
+				"type": "varchar"
+			},
+			{
+				"name": "AFFILIATE_INTRA2",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARTFIELD1",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARTFIELD2",
+				"type": "varchar"
+			},
+			{
+				"name": "CHARTFIELD3",
+				"type": "varchar"
+			},
+			{
+				"name": "PROJECT_ID",
+				"type": "varchar"
+			},
+			{
+				"name": "BOOK_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "GL_ADJUST_TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "CURRENCY_CD_TC",
+				"type": "varchar"
+			},
+			{
+				"name": "STATISTICS_CODE",
+				"type": "varchar"
+			},
+			{
+				"name": "FISCAL_YEAR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ACCOUNTING_PERIOD",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "POSTED_AMT_RC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "POSTED_AMT_FC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "POSTED_AMT_TC",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "CURRENCY_CD_FC",
+				"type": "varchar"
+			},
+			{
+				"name": "DTTM_STAMP_SEC",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "PROCESS_INSTANCE",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "LOAD_DTTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LASTUPDDTTM",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ERROR_FLAG",
+				"type": "varchar"
+			},
+			{
+				"name": "DBXCONCATCOL",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "GL_BALANCE_FACT"
+		}
+	}
+}
