@@ -11,7 +11,7 @@
 			"sheetName": "ORG_UNIT_DIM",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Workbook 1_Reporting Dimensions_Target_Azure.xlsx",
+				"fileName": "ORG_UNIT_DIM.xlsx",
 				"container": "workbook1"
 			},
 			"firstRowAsHeader": true
